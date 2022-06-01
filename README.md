@@ -1,2 +1,3 @@
 # gradle-plugin-common
-Shared code for Gradle plugins
+
+Shared code for Gradle plugins.
