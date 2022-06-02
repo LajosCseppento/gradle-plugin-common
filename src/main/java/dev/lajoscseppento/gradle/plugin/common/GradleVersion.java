@@ -49,7 +49,7 @@ public class GradleVersion {
     return of(project.getGradle());
   }
 
-  public static GradleVersion from(@NonNull Settings settings) {
+  public static GradleVersion of(@NonNull Settings settings) {
     return of(settings.getGradle());
   }
 }
