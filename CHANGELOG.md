@@ -19,4 +19,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `VersionComparator`
 
 [0.1.1]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.1.1
+
 [0.1.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.1.0
