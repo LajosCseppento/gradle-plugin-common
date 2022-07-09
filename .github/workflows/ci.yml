@@ -44,7 +44,7 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          check_name: Test Results
+          check_name: Test Results on JDK ${{ matrix.Java }}
           files: '**/build/test-results/**/*.xml'
   validation:
     name: Validate Gradle Wrapper
