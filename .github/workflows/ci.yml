@@ -6,18 +6,18 @@ jobs:
     strategy:
       matrix:
         java: [ '8', '11', '17' ]
-    name: Build on JDK ${{ matrix.Java }
+    name: Build on JDK ${{ matrix.Java }}
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK ${{ matrix.Java }
+      - name: Set up JDK ${{ matrix.Java }}
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: ${{ matrix.Java }
+          java-version: ${{ matrix.Java }}
           check-latest: true
           cache: 'gradle'
       - name: Cache SonarCloud packages
