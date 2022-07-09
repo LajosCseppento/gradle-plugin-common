@@ -4,6 +4,7 @@ on: [ push, pull_request ]
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         java: [ '8', '11', '17' ]
     name: Build on JDK ${{ matrix.Java }}
@@ -24,11 +25,12 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+          key: ${{ runner.os }}-jdk${{ matrix.Java }}-sonar
+          restore-keys: ${{ runner.os }}-jdk${{ matrix.Java }}-sonar
       - name: Compile
         uses: burrunan/gradle-cache-action@v1
         with:
+          job-id: jdk-${{ matrix.Java }}
           arguments: assemble spotlessCheck
       - name: QA
         uses: burrunan/gradle-cache-action@v1
@@ -36,6 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
+          job-id: jdk-${{ matrix.Java }}
           arguments: build sonarqube
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
