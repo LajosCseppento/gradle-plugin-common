@@ -1,20 +1,11 @@
 plugins {
     id("dev.lajoscseppento.ruthless.java-library")
-    id("org.sonarqube") version "3.3"
+    id("org.sonarqube") version "3.4.0.2513"
     `maven-publish`
     signing
 }
 
 ruthless.lombok()
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
-
-    withJavadocJar()
-    withSourcesJar()
-}
 
 dependencies {
     api(gradleApi())
