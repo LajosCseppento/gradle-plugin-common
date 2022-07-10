@@ -6,45 +6,46 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [ '8', '11', '17' ]
-    name: Build on JDK ${{ matrix.Java }}
+        jdk-version: [ '8', '11', '17' ]
+    name: Build on JDK ${{ matrix.jdk-version }}
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK ${{ matrix.Java }}
+      - name: Set up JDK ${{ matrix.jdk-version }}
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: ${{ matrix.Java }}
+          java-version: ${{ matrix.jdk-version }}
           check-latest: true
           cache: 'gradle'
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-jdk${{ matrix.Java }}-sonar
-          restore-keys: ${{ runner.os }}-jdk${{ matrix.Java }}-sonar
-      - name: Compile
+          key: ${{ runner.os }}-jdk${{ matrix.jdk-version }}-sonar
+          restore-keys: ${{ runner.os }}-jdk${{ matrix.jdk-version }}-sonar
+      - name: Build
         uses: burrunan/gradle-cache-action@v1
         with:
-          job-id: jdk-${{ matrix.Java }}
-          arguments: assemble spotlessCheck
-      - name: QA
+          job-id: jdk-${{ matrix.jdk-version }}
+          arguments: build
+      - name: Sonar (JDK 11 only)
+        if: ${{ matrix.jdk-version == 11 }}
         uses: burrunan/gradle-cache-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          job-id: jdk-${{ matrix.Java }}
-          arguments: build sonarqube
+          job-id: jdk-${{ matrix.jdk-version }}
+          arguments: sonarqube
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          check_name: Test Results on JDK ${{ matrix.Java }}
+          check_name: Test Results on JDK ${{ matrix.jdk-version }}
           files: '**/build/test-results/**/*.xml'
   validation:
     name: Validate Gradle Wrapper
