@@ -1,10 +1,13 @@
 name: CI
-on: [push, pull_request]
+on:
+  push
+  pull_request:
+
 
 jobs:
   build:
     # Avoid duplicated CI runs for internal PRs
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != 'LajosCseppento/gradle-plugin-common'
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     strategy:
       fail-fast: false
       matrix:
