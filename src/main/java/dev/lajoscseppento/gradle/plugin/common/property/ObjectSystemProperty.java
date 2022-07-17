@@ -17,13 +17,13 @@ public class ObjectSystemProperty<T> extends AbstractSystemProperty<T> {
 
   private final Function<String, T> parser;
 
-  protected ObjectSystemProperty(
+  public ObjectSystemProperty(
       @NonNull String key, @Nullable T defaultValue, @NonNull Function<String, T> parser) {
     super(key, defaultValue);
     this.parser = parser;
   }
 
-  protected ObjectSystemProperty(
+  public ObjectSystemProperty(
       @NonNull String key,
       @NonNull Supplier<T> defaultValueSupplier,
       @NonNull Function<String, T> parser) {
