@@ -9,6 +9,7 @@ ruthless.lombok()
 
 dependencies {
     api(gradleApi())
+    testImplementation("org.junit-pioneer:junit-pioneer:1.7.1")
 }
 
 val DESCRIPTION = "Shared code for Gradle plugins"
