@@ -3,7 +3,7 @@ package dev.lajoscseppento.gradle.plugin.common.impl;
 import javax.annotation.Nullable;
 import lombok.experimental.UtilityClass;
 
-/** The must-have blob. */
+/** The must-have blob. At least internal (for now)... */
 @UtilityClass
 public class Utils {
   private final String UNSPECIFIED = "unspecified";
