@@ -9,6 +9,8 @@ import lombok.NonNull;
 /**
  * Base class for system properties.
  *
+ * <p>During parsing string values are trimmed.
+ *
  * @param <T> value type
  */
 public abstract class AbstractSystemProperty<T> {
@@ -41,7 +43,7 @@ public abstract class AbstractSystemProperty<T> {
   /**
    * Parses the value of the system property.
    *
-   * @param value the value
+   * @param value the value (trimmed)
    * @return the parsed value
    * @throws InvalidPropertyValueException if the value is invalid
    */

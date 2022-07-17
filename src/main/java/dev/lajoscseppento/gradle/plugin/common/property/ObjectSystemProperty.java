@@ -9,6 +9,8 @@ import lombok.NonNull;
 /**
  * Represents an object system property.
  *
+ * <p>During parsing string values are trimmed.
+ *
  * @param <T> value type
  */
 public class ObjectSystemProperty<T> extends AbstractSystemProperty<T> {

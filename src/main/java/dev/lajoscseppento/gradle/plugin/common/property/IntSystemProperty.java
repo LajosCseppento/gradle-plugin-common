@@ -4,7 +4,11 @@ import dev.lajoscseppento.gradle.plugin.common.property.impl.AbstractSystemPrope
 import java.util.function.Supplier;
 import lombok.NonNull;
 
-/** Represents an <code>int</code> system property. */
+/**
+ * Represents an <code>int</code> system property.
+ *
+ * <p>During parsing string values are trimmed.
+ */
 public class IntSystemProperty extends AbstractSystemProperty<Integer> {
 
   public IntSystemProperty(@NonNull String key, int defaultValue) {
@@ -22,7 +26,7 @@ public class IntSystemProperty extends AbstractSystemProperty<Integer> {
   @Override
   protected Integer parse(@NonNull String value) {
     try {
-      return Integer.parseInt(value.trim());
+      return Integer.parseInt(value);
     } catch (Exception ex) {
       throw new InvalidPropertyValueException(
           "Cannot parse value of system property " + getKey() + " as int: " + value, ex);

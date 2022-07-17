@@ -5,15 +5,17 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import lombok.NonNull;
 
-/** Represents a string system property. */
+/**
+ * Represents a string system property.
+ *
+ * <p>During parsing string values are trimmed.
+ */
 public class StringSystemProperty extends ObjectSystemProperty<String> {
-  private static final Function<String, String> PARSER = String::trim;
-
   public StringSystemProperty(@NonNull String key, @Nullable String defaultValue) {
-    super(key, defaultValue, PARSER);
+    super(key, defaultValue, Function.identity());
   }
 
   public StringSystemProperty(@NonNull String key, @NonNull Supplier<String> defaultValueSupplier) {
-    super(key, defaultValueSupplier, PARSER);
+    super(key, defaultValueSupplier, Function.identity());
   }
 }
