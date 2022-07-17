@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2022-07-17
+
 ### Changed
 
 - Make ObjectSystemProperty constructors public
@@ -36,7 +38,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GradleVersion`
 - `VersionComparator`
 
-[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.2.1...HEAD
+
+[0.2.1]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.2.1
 
 [0.2.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.2.0
 
