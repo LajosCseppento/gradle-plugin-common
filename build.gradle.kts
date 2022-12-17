@@ -5,8 +5,6 @@ plugins {
     signing
 }
 
-ruthless.lombok()
-
 dependencies {
     api(gradleApi())
     testImplementation("org.junit-pioneer:junit-pioneer:1.7.1")
