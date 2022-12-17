@@ -8,6 +8,8 @@
 Shared code for Gradle plugins, such as [Ruthless](https://github.com/LajosCseppento/ruthless)
 and [FancyDoc](https://github.com/LajosCseppento/fancydoc).
 
+## Development Guide
+
 ### Release Procedure
 
 1. Release commit: fix version, finalise change log (don't forget about the links in the bottom of
