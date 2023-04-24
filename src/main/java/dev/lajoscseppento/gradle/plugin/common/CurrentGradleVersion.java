@@ -5,7 +5,7 @@ import lombok.experimental.UtilityClass;
 import org.gradle.api.GradleException;
 import org.gradle.util.GradleVersion;
 
-/** Provides utilities for checking the Gradle version. */
+/** Provides utilities for checking the current Gradle version. */
 @UtilityClass
 public class CurrentGradleVersion {
 
