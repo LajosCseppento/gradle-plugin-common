@@ -35,7 +35,7 @@ class CurrentGradleVersionTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"8.0", "8.1.1"})
+  @CsvSource({"8.5", "8.5.1"})
   void testRequireAtLeastThrowsWhenOlder(String minimumVersion) {
     assertThatThrownBy(() -> CurrentGradleVersion.requireAtLeast(minimumVersion))
         .isExactlyInstanceOf(GradleException.class)
