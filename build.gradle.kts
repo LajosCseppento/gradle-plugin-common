@@ -1,15 +1,13 @@
 plugins {
     id("dev.lajoscseppento.ruthless.java-library")
-    id("org.sonarqube") version "3.4.0.2513"
+    id("org.sonarqube")
     `maven-publish`
     signing
 }
 
-ruthless.lombok()
-
 dependencies {
     api(gradleApi())
-    testImplementation("org.junit-pioneer:junit-pioneer:1.7.1")
+    testImplementation("org.junit-pioneer:junit-pioneer")
 }
 
 val DESCRIPTION = "Shared code for Gradle plugins"

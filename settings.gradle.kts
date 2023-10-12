@@ -1,5 +1,12 @@
+pluginManagement {
+    plugins {
+        id("dev.lajoscseppento.ruthless") version "0.7.0"
+        id("org.sonarqube") version "4.0.0.2929"
+    }
+}
+
 plugins {
-    id("dev.lajoscseppento.ruthless") version "0.4.0"
+    id("dev.lajoscseppento.ruthless")
     id("com.gradle.enterprise") version "+"
 }
 
