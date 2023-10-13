@@ -8,6 +8,12 @@ import lombok.experimental.UtilityClass;
 public class Utils {
   private final String UNSPECIFIED = "unspecified";
 
+  /**
+   * Returns true if the given value is null or empty.
+   *
+   * @param value the value to check
+   * @return true if the given value is null or empty
+   */
   public boolean isUnspecified(Object value) {
     if (value == null) {
       return true;
@@ -17,6 +23,12 @@ public class Utils {
     }
   }
 
+  /**
+   * Trims the given string value and returns null if it is empty.
+   *
+   * @param value the string to trim
+   * @return the trimmed string or null if it is empty
+   */
   @Nullable
   public String trimToNull(String value) {
     if (value == null) {

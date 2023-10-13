@@ -18,19 +18,36 @@ public abstract class AbstractSystemProperty<T> {
   private final T defaultValue;
   private final Supplier<T> defaultValueSupplier;
 
+  /**
+   * Initialises the abstract class.
+   *
+   * @param key the system property key
+   * @param defaultValue the default value
+   */
   protected AbstractSystemProperty(@NonNull String key, T defaultValue) {
     this.key = key;
     this.defaultValue = defaultValue;
     this.defaultValueSupplier = null;
   }
 
+  /**
+   * Initialises the abstract class.
+   *
+   * @param key the property key
+   * @param defaultValueSupplier a {@link Supplier} providing the default value
+   */
   protected AbstractSystemProperty(@NonNull String key, @NonNull Supplier<T> defaultValueSupplier) {
     this.key = key;
     this.defaultValue = null;
     this.defaultValueSupplier = defaultValueSupplier;
   }
 
-  protected final T getValueOrDefault() {
+  /**
+   * Returns the value of the system property or the default value if it is not set.
+   *
+   * @return the value of the system property or the default value if it is not set
+   */
+  protected T getValueOrDefault() {
     String value = Utils.trimToNull(System.getProperty(key));
 
     if (value == null) {
