@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Upgrade to Ruthless 0.7.0, Java 11, Gradle 7.6.1 
+- Upgrade to Ruthless 0.7.0, Java 11, Gradle 7.6.1
 - Transform `GradleVersion` utility into `CurrentGradleVersion` to avoid confusion with `org.gradle.util.GradleVersion`. Also removed unused methods.
 
 ### Removed
