@@ -1,6 +1,6 @@
 pluginManagement {
     plugins {
-        id("dev.lajoscseppento.ruthless") version "0.7.0"
+        id("dev.lajoscseppento.ruthless") version "0.8.0"
         id("org.sonarqube") version "4.4.1.3373"
     }
 }
