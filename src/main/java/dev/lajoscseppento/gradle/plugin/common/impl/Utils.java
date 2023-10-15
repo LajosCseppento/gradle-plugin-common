@@ -24,10 +24,10 @@ public class Utils {
   }
 
   /**
-   * Trims the given string value and returns null if it is empty.
+   * Trims the given string value and returns null if it is blank.
    *
    * @param value the string to trim
-   * @return the trimmed string or null if it is empty
+   * @return the trimmed string or null if it is blank
    */
   @Nullable
   public String trimToNull(String value) {
