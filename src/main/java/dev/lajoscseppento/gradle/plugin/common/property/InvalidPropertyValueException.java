@@ -3,7 +3,7 @@ package dev.lajoscseppento.gradle.plugin.common.property;
 /** Exception type for property helpers. */
 public class InvalidPropertyValueException extends RuntimeException {
   /**
-   * Creates an exception.
+   * Constructor.
    *
    * @param message the message
    */
@@ -12,7 +12,7 @@ public class InvalidPropertyValueException extends RuntimeException {
   }
 
   /**
-   * Creates an exception.
+   * Constructor.
    *
    * @param message the message
    * @param cause the cause

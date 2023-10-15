@@ -39,7 +39,7 @@ public class BooleanSystemProperty extends PrimitiveSystemProperty<Boolean> {
    * Returns the value of the system property.
    *
    * @return the value of the system property or the default value if it is not set
-   * @throws InvalidPropertyValueException if the default value is would be returned, but it is null
+   * @throws InvalidPropertyValueException if the default value would be returned, but it is null
    */
   public boolean get() {
     return getValueOrDefault();

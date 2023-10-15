@@ -9,10 +9,10 @@ public class Utils {
   private final String UNSPECIFIED = "unspecified";
 
   /**
-   * Returns true if the given value is null or empty.
+   * Returns true if the given value is regarded as unspecified by Gradle.
    *
    * @param value the value to check
-   * @return true if the given value is null or empty
+   * @return true if the given value is regarded as unspecified by Gradle
    */
   public boolean isUnspecified(Object value) {
     if (value == null) {
