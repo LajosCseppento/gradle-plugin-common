@@ -11,7 +11,7 @@ import lombok.NonNull;
  */
 public class IntSystemProperty extends PrimitiveSystemProperty<Integer> {
   /**
-   * Creates a boolean system property.
+   * Creates an int system property.
    *
    * @param key the system property key
    * @param defaultValue the default value
@@ -21,7 +21,7 @@ public class IntSystemProperty extends PrimitiveSystemProperty<Integer> {
   }
 
   /**
-   * Creates a boolean system property.
+   * Creates an int system property.
    *
    * @param key the system property key
    * @param defaultValueSupplier a {@link Supplier} providing the default value
