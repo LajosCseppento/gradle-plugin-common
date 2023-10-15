@@ -14,15 +14,28 @@ import lombok.NonNull;
  * @param <T> value type
  */
 public class ObjectSystemProperty<T> extends AbstractSystemProperty<T> {
-
   private final Function<String, T> parser;
 
+  /**
+   * Creates an object system property.
+   *
+   * @param key the property key
+   * @param defaultValue the default value
+   * @param parser a {@link Function} parsing the value
+   */
   public ObjectSystemProperty(
       @NonNull String key, @Nullable T defaultValue, @NonNull Function<String, T> parser) {
     super(key, defaultValue);
     this.parser = parser;
   }
 
+  /**
+   * Creates an object system property.
+   *
+   * @param key the property key
+   * @param defaultValueSupplier a {@link Supplier} providing the default value
+   * @param parser a {@link Function} parsing the value
+   */
   public ObjectSystemProperty(
       @NonNull String key,
       @NonNull Supplier<T> defaultValueSupplier,
