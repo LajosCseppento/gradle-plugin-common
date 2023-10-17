@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-10-17
+
 ### Changed
 
 - Upgrade to Ruthless 0.8.0, Java 17 & Gradle 8.4
@@ -65,7 +67,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GradleVersion`
 - `VersionComparator`
 
-[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.5.0...HEAD
+
+[0.5.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.5.0
 
 [0.4.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.4.0
 
