@@ -9,18 +9,29 @@ import org.gradle.util.GradleVersion;
 @UtilityClass
 public class CurrentGradleVersion {
 
+  /**
+   * Checks if the current Gradle version is at least the given version.
+   *
+   * @param minimumVersion the minimum version
+   * @throws GradleException if the current Gradle version is lower than the given version
+   */
   public void requireAtLeast(@NonNull String minimumVersion) {
     requireAtLeast(GradleVersion.version(minimumVersion));
   }
 
+  /**
+   * Checks if the current Gradle version is at least the given version.
+   *
+   * @param minimumVersion the minimum version
+   * @throws GradleException if the current Gradle version is lower than the given version
+   */
   public void requireAtLeast(@NonNull GradleVersion minimumVersion) {
     GradleVersion currentVersion = GradleVersion.current();
 
     if (GradleVersion.current().compareTo(minimumVersion) < 0) {
       String msg =
-          String.format(
-              "Gradle version %s is too old, please use %s at least.",
-              currentVersion.getVersion(), minimumVersion.getVersion());
+          "Gradle version %s is too old, please use %s at least."
+              .formatted(currentVersion.getVersion(), minimumVersion.getVersion());
       throw new GradleException(msg);
     }
   }

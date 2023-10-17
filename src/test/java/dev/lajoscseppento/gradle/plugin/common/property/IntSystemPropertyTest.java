@@ -10,11 +10,13 @@ import org.junitpioneer.jupiter.SetSystemProperty;
 class IntSystemPropertyTest {
   private IntSystemProperty property1;
   private IntSystemProperty property2;
+  private IntSystemProperty property3;
 
   @BeforeEach
   void setUp() {
     property1 = new IntSystemProperty("property.int1", 0);
     property2 = new IntSystemProperty("property.int2", () -> 1);
+    property3 = new IntSystemProperty("property.int3", () -> null);
   }
 
   @Test
@@ -40,6 +42,15 @@ class IntSystemPropertyTest {
         .cause()
         .isExactlyInstanceOf(NumberFormatException.class)
         .hasMessage("For input string: \"abc\"")
+        .hasNoCause();
+  }
+
+  @Test
+  void testNullDefaultValue() {
+    assertThatThrownBy(() -> property3.get())
+        .isExactlyInstanceOf(InvalidPropertyValueException.class)
+        .hasMessage(
+            "System property property.int3 has a null value, but a primitive type was requested (IntSystemProperty)")
         .hasNoCause();
   }
 }

@@ -7,12 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-10-17
+
+### Changed
+
+- Upgrade to Ruthless 0.8.0, Java 17 & Gradle 8.4
+- Improve null handling for primitive-valued system properties
+
+### Removed
+
+- Java 11 support
+- Gradle 7 support
+
 ## [0.4.0] - 2023-04-25
 
 ### Changed
 
-- Upgrade to Ruthless 0.7.0, Gradle 7.6.1, Java 11
+- Upgrade to Ruthless 0.7.0, Java 11, Gradle 7.6.1
 - Transform `GradleVersion` utility into `CurrentGradleVersion` to avoid confusion with `org.gradle.util.GradleVersion`. Also removed unused methods.
+
+### Removed
+
+- Java 8 support
 
 ## [0.3.0] - 2022-12-17
 
@@ -51,9 +67,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GradleVersion`
 - `VersionComparator`
 
-[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/LajosCseppento/gradle-plugin-common/compare/v0.5.0...HEAD
 
-[0.3.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.4.0
+[0.5.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.5.0
+
+[0.4.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.4.0
 
 [0.3.0]: https://github.com/LajosCseppento/gradle-plugin-common/releases/tag/v0.3.0
 
